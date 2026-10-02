@@ -1,7 +1,5 @@
 import sys
 import copy
-
-# Đảm bảo in tiếng Việt không bị lỗi charmap trên terminal Windows
 if sys.platform == "win32" and sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     try:
         sys.stdout.reconfigure(encoding="utf-8")
@@ -15,7 +13,6 @@ DIRECTIONS = {
     "East":  (0, 1),
     "Stay":  (0, 0)
 }
-
 class CompetitiveState:
     """
     Trạng thái của trò chơi Sokoban đối kháng 2 Agent.
@@ -42,7 +39,6 @@ class CompetitiveState:
         s1 = sum(1 for pos, owner in self.boxes.items() if pos in self.goals and owner == 1)
         s2 = sum(1 for pos, owner in self.boxes.items() if pos in self.goals and owner == 2)
         self.scores = {1: s1, 2: s2}
-
     def clone(self):
         return CompetitiveState(
             self.walls,
@@ -53,8 +49,6 @@ class CompetitiveState:
             self.max_steps,
             self.scores
         )
-
-
 class CompetitiveGame:
     """
     Môi trường mô phỏng trò chơi đối kháng 2 Agent (Yêu cầu 6 & 8).
@@ -127,11 +121,9 @@ class CompetitiveGame:
             if action == "Stay":
                 continue
             new_pos = (pos[0] + dr, pos[1] + dc)
-
             # Đụng tường
             if new_pos in state.walls:
                 continue
-
             # Đụng thùng
             if new_pos in state.boxes:
                 new_box_pos = (new_pos[0] + dr, new_pos[1] + dc)
