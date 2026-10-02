@@ -1,0 +1,5 @@
+# Danh sách thư viện phụ thuộc cho dự án Sokoban AI
+# Tương thích với macOS 13.7.8 (Ventura) Intel Core i5 và Windows 10/11
+pygame>=2.5.0
+matplotlib>=3.7.0
+numpy>=1.24.0
