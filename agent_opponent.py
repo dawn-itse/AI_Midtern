@@ -1,21 +1,13 @@
 """Agent đối kháng Sokoban dùng BFS và đánh giá nước đẩy tham lam."""
-
 from collections import deque
 import time
-
 from competitive_core import DIRECTIONS
-
-
 _MOVES = tuple((action, delta) for action, delta in DIRECTIONS.items()
               if action != "Stay")
 _MEMORY = {}
-
-
 def _layout_key(boxes):
     """Tạo khóa ổn định cho vị trí và chủ sở hữu các hộp."""
     return tuple(sorted(boxes.items()))
-
-
 def _reverse_push_bfs(goal, walls, bounds, deadline):
     """Tính số lần đẩy tối thiểu từ các ô tới một goal."""
     min_row, max_row, min_col, max_col = bounds
