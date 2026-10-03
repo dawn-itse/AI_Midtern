@@ -69,10 +69,30 @@ def run_match(map_path: str = "maps/battle_map.txt", max_steps: int = 30, delay:
     print("=" * 65)
 
 if __name__ == "__main__":
-    steps = 20
+    map_file = "maps/battle_map.txt"
+    steps = 50
+
     if len(sys.argv) > 1:
+        arg1 = sys.argv[1].strip()
+        if arg1.isdigit():
+            steps = int(arg1)
+            if len(sys.argv) > 2:
+                map_file = sys.argv[2]
+        else:
+            if arg1.lower() in ("hard", "2", "battle_map_hard.txt"):
+                map_file = "maps/battle_map_hard.txt"
+            else:
+                map_file = arg1
+            if len(sys.argv) > 2 and sys.argv[2].isdigit():
+                steps = int(sys.argv[2])
+    else:
+        print("\n--- BẢN ĐỒ THI ĐẤU ĐỐI KHÁNG ---")
+        print(f"[*] Sử dụng bản đồ đại chiến trường: {map_file} (25x11)")
         try:
-            steps = int(sys.argv[1])
-        except ValueError:
+            user_steps = input("Nhập số bước tối đa n (mặc định 50): ").strip()
+            if user_steps and user_steps.isdigit():
+                steps = int(user_steps)
+        except (ValueError, KeyboardInterrupt):
             pass
-    run_match(max_steps=steps, delay=0.05)
+
+    run_match(map_path=map_file, max_steps=steps, delay=0.08)

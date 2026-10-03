@@ -85,9 +85,8 @@ class UCSSolver:
 if __name__ == "__main__":
     import os
 
-    map_path = os.path.join("maps", "map_easy.txt")
-    if not os.path.exists(map_path):
-        map_path = "example_map.txt"
+    import sys
+    map_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join("maps", "map_single.txt")
 
     print(f"=== Đang chạy thử UCS (chuẩn mã giả slide) trên {map_path} ===")
     prob = SokobanProblem(map_path)

@@ -124,20 +124,20 @@ class CompetitiveGUI:
     WIDTH = 960
     HEIGHT = 760
 
-    def __init__(self, map_path=DEFAULT_MAP, pygame_module=None):
+    def __init__(self, map_path=DEFAULT_MAP, max_steps=50, pygame_module=None):
         if pygame_module is None:
             try:
                 import pygame as pygame_module
             except ImportError as exc:
                 raise RuntimeError("Pygame is required. Install dependencies with pip install -r requirements.txt") from exc
         self.pygame = pygame_module
-        self.controller = CompetitiveController(map_path, 30)
+        self.controller = CompetitiveController(map_path, max_steps)
         self.screen = None
         self.renderer = None
         self.font = None
         self.small_font = None
         self.clock = None
-        self.max_steps_text = "30"
+        self.max_steps_text = str(max_steps)
         self.editing_limit = False
         self.button_rects = {}
 
@@ -257,9 +257,10 @@ class CompetitiveGUI:
 def main():
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("map", nargs="?", default=str(DEFAULT_MAP))
+    parser.add_argument("map", nargs="?", default=str(DEFAULT_MAP), help="Đường dẫn bản đồ thi đấu")
+    parser.add_argument("steps", nargs="?", type=int, default=50, help="Số bước tối đa n")
     args = parser.parse_args()
-    CompetitiveGUI(args.map).run()
+    CompetitiveGUI(args.map, max_steps=args.steps).run()
 
 
 if __name__ == "__main__":

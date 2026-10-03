@@ -159,9 +159,7 @@ def main():
     print("       YÊU CẦU 4: KIỂM CHỨNG TÍNH CHẤT HEURISTIC BẰNG THỰC NGHIỆM")
     print("=" * 75)
 
-    map_path = os.path.join("maps", "map_easy.txt")
-    if not os.path.exists(map_path):
-        map_path = "example_map.txt"
+    map_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join("maps", "map_single.txt")
 
     print(f"\n[+] Khởi tạo bản đồ kiểm thử: {map_path}")
     problem = SokobanProblem(map_path)

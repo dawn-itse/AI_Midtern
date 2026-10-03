@@ -76,9 +76,7 @@ def main():
     print_banner()
 
     # Nhận đường dẫn map từ terminal nếu có: python main.py <map_path>
-    map_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join("maps", "map_easy.txt")
-    if not os.path.exists(map_path):
-        map_path = "example_map.txt"
+    map_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join("maps", "map_single.txt")
 
     if not os.path.exists(map_path):
         print(f"[Lỗi] Không tìm thấy file bản đồ: {map_path}")

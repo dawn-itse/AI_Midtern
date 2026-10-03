@@ -12,10 +12,8 @@ def main():
     if len(sys.argv) > 1:
         map_path = sys.argv[1]
     else:
-        # Mặc định dùng map_easy.txt (1 thùng) để chạy mượt mà ngay lập tức
-        map_path = os.path.join(base_dir, "maps", "map_easy.txt")
-        if not os.path.exists(map_path):
-            map_path = os.path.join(base_dir, "maps", "example_map.txt")
+        # Mặc định dùng map_single.txt (4 thùng) để test thuật toán UCS và A*
+        map_path = os.path.join(base_dir, "maps", "map_single.txt")
 
     print(f"[*] Khởi động giao diện Sokoban GUI trên bản đồ: {map_path}")
     problem = SokobanProblem(map_path)

@@ -1,7 +1,5 @@
 from collections import deque
 import sys
-
-# Đảm bảo in tiếng Việt không bị lỗi charmap trên terminal Windows
 if sys.platform == "win32" and sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     try:
         sys.stdout.reconfigure(encoding="utf-8")
@@ -11,18 +9,6 @@ if sys.platform == "win32" and sys.stdout.encoding and sys.stdout.encoding.lower
 from sokoban_core import SokobanProblem
 
 class SokobanHeuristic:
-    """
-    Hàm Heuristic cho thuật toán A* trong Sokoban.
-    TUYỆT ĐỐI KHÔNG DÙNG MANHATTAN HOẶC EUCLIDEAN.
-    
-    Phương pháp sử dụng:
-    1. Khoảng cách đi bộ thực tế (True Walk Distance via Multi-source BFS):
-       Tính bảng khoảng cách ngắn nhất né tường từ các ô đích 'D' đến mọi ô trên bản đồ.
-    2. Phát hiện góc chết (Corner Deadlock Detection):
-       Nếu bất kỳ thùng nào bị kẹt vào góc 2 bức tường vuông góc (không phải đích)
-       -> Gán h(state) = vô cùng (float('inf')) để A* loại bỏ ngay lập tức.
-    """
-
     def __init__(self, problem: SokobanProblem):
         self.problem = problem
         self.walls = problem.walls
@@ -125,9 +111,8 @@ class SokobanHeuristic:
 if __name__ == "__main__":
     import os
 
-    map_path = os.path.join("maps", "map_easy.txt")
-    if not os.path.exists(map_path):
-        map_path = "example_map.txt"
+    import sys
+    map_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join("maps", "map_single.txt")
 
     print(f"=== Kiểm thử Heuristic trên bản đồ: {map_path} ===")
     problem = SokobanProblem(map_path)
