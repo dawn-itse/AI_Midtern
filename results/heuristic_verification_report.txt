@@ -2,6 +2,6 @@ BÁO CÁO KIỂM CHỨNG HEURISTIC - YÊU CẦU 4
 ============================================================
 - Tổng số trạng thái kiểm tra Admissibility: 50
 - Tỉ lệ Admissible (h(n) <= h*(n)): 100.00%
-- Tổng số bước chuyển kiểm tra Consistency: 98
+- Tổng số bước chuyển kiểm tra Consistency: 117
 - Tỉ lệ Consistent (h(n) - h(n') <= 1): 100.00%
 - Kết luận: Hàm Heuristic đạt chuẩn 100% về mặt lý thuyết lẫn thực nghiệm.
