@@ -1,0 +1,13 @@
+map,algorithm,run,found,cost,expanded,max_frontier,runtime_seconds,peak_memory_bytes,status,error
+maps/example_map.txt,UCS,1,False,,,,5.044817099999818,,timeout,worker exceeded 5.0s; UCS has no internal timeout check
+maps/example_map.txt,UCS,2,False,,,,5.035216100000071,,timeout,worker exceeded 5.0s; UCS has no internal timeout check
+maps/example_map.txt,UCS,3,False,,,,5.0339281999995364,,timeout,worker exceeded 5.0s; UCS has no internal timeout check
+maps/example_map.txt,A*,1,True,34,13490,3197,0.6949232999995729,5604151,solved,
+maps/example_map.txt,A*,2,True,34,13490,3197,0.6383681000006618,5604151,solved,
+maps/example_map.txt,A*,3,True,34,13490,3197,0.6937315000004673,5604151,solved,
+maps/map_single.txt,UCS,1,True,29,30670,37243,0.4574019000001499,11008179,solved,
+maps/map_single.txt,UCS,2,True,29,30670,37243,0.44506639999963227,11008179,solved,
+maps/map_single.txt,UCS,3,True,29,30670,37243,0.465811300000496,11008179,solved,
+maps/map_single.txt,A*,1,True,29,7158,1413,0.28783109999949374,2373823,solved,
+maps/map_single.txt,A*,2,True,29,7158,1413,0.2773356999996395,2373823,solved,
+maps/map_single.txt,A*,3,True,29,7158,1413,0.24010080000061862,2373823,solved,
