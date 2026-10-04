@@ -17,15 +17,9 @@ class SokobanHeuristic:
         self.distance_map = self._precompute_distance_map()
 
     def _precompute_distance_map(self) -> dict[tuple[int, int], int]:
-        """
-        Dùng BFS đa nguồn (Multi-source BFS) xuất phát đồng thời từ tất cả các ô đích 'D'
-        để tính khoảng cách ngắn nhất né tường đến mọi ô trống có thể đi tới.
-        Chỉ tính 1 lần duy nhất lúc khởi tạo (O(Rows * Cols)).
-        """
         distance_map = {}
         queue = deque()
 
-        # Ban đầu, khoảng cách từ mỗi ô đích về chính nó là 0
         for target in self.targets:
             distance_map[target] = 0
             queue.append((target, 0))
@@ -39,11 +33,9 @@ class SokobanHeuristic:
                 nr, nc = curr_r + dr, curr_c + dc
                 neighbor = (nr, nc)
 
-                # Không đi xuyên qua tường
                 if neighbor in self.walls:
                     continue
 
-                # Nếu ô này chưa được ghé thăm
                 if neighbor not in distance_map:
                     distance_map[neighbor] = dist + 1
                     queue.append((neighbor, dist + 1))
@@ -111,8 +103,9 @@ class SokobanHeuristic:
 if __name__ == "__main__":
     import os
 
-    import sys
-    map_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join("maps", "map_single.txt")
+    map_path = os.path.join("maps", "map_easy.txt")
+    if not os.path.exists(map_path):
+        map_path = "example_map.txt"
 
     print(f"=== Kiểm thử Heuristic trên bản đồ: {map_path} ===")
     problem = SokobanProblem(map_path)

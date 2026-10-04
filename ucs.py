@@ -60,10 +60,7 @@ def uniform_cost_search(problem: SokobanProblem, timeout_seconds: float = None, 
             max_frontier_size = len(frontier_states)
     
 class UCSSolver:
-    """
-    Lớp bao đóng OOP cho thuật toán UCS (Đáp ứng Yêu cầu 5 về thiết kế OOP).
-    """
-
+    
     def __init__(self, problem: SokobanProblem):
         self.problem = problem
         self.nodes_explored = 0

@@ -1,0 +1,11 @@
+# LINK VIDEO DEMO DỰ ÁN SOKOBAN AI (THỜI LƯỢNG TỐI ĐA 03 PHÚT)
+# Môn: Nhập môn Trí tuệ Nhân tạo (503043) - Trường Đại học Tôn Đức Thắng
+
+https://youtu.be/your_demo_video_link_here
+
+# Hướng dẫn nộp bài:
+# 1. Quay màn hình chạy thử nghiệm:
+#    - python main_gui.py maps/example_map.txt (Bấm A* giải và Space chạy)
+#    - python competitive_gui.py maps/battle_map.txt 50 (Bấm Space xem 2 Agent thi đấu)
+# 2. Upload video lên YouTube (chế độ Unlisted/Không công khai) hoặc Google Drive (bật quyền "Bất kỳ ai có đường liên kết đều có thể xem").
+# 3. Dán link video vào dòng trên thay thế cho placeholder.

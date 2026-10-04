@@ -1,13 +1,13 @@
 map,algorithm,run,found,cost,expanded,max_frontier,runtime_seconds,peak_memory_bytes,status,error
-maps/example_map.txt,UCS,1,False,,,,5.042005100000097,,timeout,worker exceeded 5.0s; UCS has no internal timeout check
-maps/example_map.txt,UCS,2,False,,,,5.040807699999277,,timeout,worker exceeded 5.0s; UCS has no internal timeout check
-maps/example_map.txt,UCS,3,False,,,,5.033898300000146,,timeout,worker exceeded 5.0s; UCS has no internal timeout check
-maps/example_map.txt,A*,1,True,34,13490,3197,0.6374452000000019,5604151,solved,
-maps/example_map.txt,A*,2,True,34,13490,3197,0.5886563999993086,5604151,solved,
-maps/example_map.txt,A*,3,True,34,13490,3197,0.5913763000007748,5604151,solved,
-maps/map_single.txt,UCS,1,True,29,30670,37243,0.4402539999991859,11008179,solved,
-maps/map_single.txt,UCS,2,True,29,30670,37243,0.4730980999993335,11008179,solved,
-maps/map_single.txt,UCS,3,True,29,30670,37243,0.4235857000003307,11008179,solved,
-maps/map_single.txt,A*,1,True,29,7158,1413,0.24267200000031153,2373823,solved,
-maps/map_single.txt,A*,2,True,29,7158,1413,0.3204540000006091,2373823,solved,
-maps/map_single.txt,A*,3,True,29,7158,1413,0.24669250000079046,2373823,solved,
+maps/example_map.txt,UCS,1,False,,,,5.039077000000361,,timeout,worker exceeded 5.0s; UCS has no internal timeout check
+maps/example_map.txt,UCS,2,False,,,,5.027505299999575,,timeout,worker exceeded 5.0s; UCS has no internal timeout check
+maps/example_map.txt,UCS,3,False,,,,5.039282899999307,,timeout,worker exceeded 5.0s; UCS has no internal timeout check
+maps/example_map.txt,A*,1,True,34,13490,3197,0.7032767999999123,5611036,solved,
+maps/example_map.txt,A*,2,True,34,13490,3197,0.7133445999998003,5611036,solved,
+maps/example_map.txt,A*,3,True,34,13490,3197,0.7216773000000103,5611036,solved,
+maps/map_single.txt,UCS,1,True,29,30670,37243,0.5278408000003765,11031532,solved,
+maps/map_single.txt,UCS,2,True,29,30670,37243,0.5296166999996785,11031532,solved,
+maps/map_single.txt,UCS,3,True,29,30670,37243,0.5340698999998494,11031532,solved,
+maps/map_single.txt,A*,1,True,29,7158,1413,0.36782080000011774,2372952,solved,
+maps/map_single.txt,A*,2,True,29,7158,1413,0.342311399999744,2372952,solved,
+maps/map_single.txt,A*,3,True,29,7158,1413,0.3302948999998989,2372952,solved,
